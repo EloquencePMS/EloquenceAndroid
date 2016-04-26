@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:background="@drawable/border">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="21"
+        android:id="@+id/tvDate"
+        android:tag="0"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:paddingTop="2dp"
+        android:paddingLeft="2dp"
+        android:gravity="center"
+        android:layout_alignParentEnd="false"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="2dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/checkins"
+        android:id="@+id/tvCheckins"
+        android:tag="1"
+
+        android:layout_below="@+id/tvDate"
+        android:layout_alignParentStart="true"
+        android:singleLine="true"
+        android:textColor="@color/text"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="2dp"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/checkouts"
+        android:id="@+id/tvCheckouts"
+        android:tag="2"
+
+        android:layout_below="@+id/tvCheckins"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="2dp"
+        android:textSize="12sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/availability"
+        android:id="@+id/tvAvailability"
+        android:tag="3"
+
+        android:layout_below="@+id/tvCheckouts"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginBottom="2dp"
+        android:textSize="12sp" />
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Eloquence</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="dashboard_title">Dashboard</string>
+    <string name="checkins">Check Ins: </string>
+    <string name="checkouts">Check Outs: </string>
+    <string name="availability">Availability: </string>
+
+</resources>

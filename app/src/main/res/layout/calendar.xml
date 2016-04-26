@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/calendarFragment"
+    android:weightSum="16"
+    android:background="@drawable/border">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@drawable/border"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:id="@+id/btnLeftArrow"
+                android:background="@color/background"
+                android:layout_marginStart="40dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/leftarrow"
+                style="f]"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:id="@+id/btnRightArrow"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="40dp"
+                android:background="@color/background"
+                android:src="@drawable/rightarrow"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="tvMonth"
+                android:id="@+id/tvMonth"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="tvYear"
+                android:id="@+id/tvYear"
+                android:layout_below="@+id/tvMonth"
+                android:layout_centerHorizontal="true"
+                android:singleLine="true" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="7">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Sunday"
+                android:id="@+id/tvSunday"
+                android:singleLine="true" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monday"
+                android:id="@+id/tvMonday"
+                android:singleLine="true" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:background="@drawable/border"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tuesday"
+                android:id="@+id/tvTuesday"
+                android:singleLine="true" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:background="@drawable/border"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wednesday"
+                android:id="@+id/tvWednesday"
+                android:singleLine="true" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:background="@drawable/border"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thursday"
+                android:id="@+id/tvThursday"
+                android:singleLine="true" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:background="@drawable/border"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Friday"
+                android:id="@+id/tvFriday"
+                android:singleLine="true" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:background="@drawable/border"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saturday"
+                android:id="@+id/tvSaturday"
+                android:singleLine="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_weight="2"
+        android:weightSum="7"
+        android:gravity="center">
+
+
+
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_01"
+            android:tag="1"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_02"
+            android:tag="2"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_03"
+            android:tag="3"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_04"
+            android:tag="4"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_05"
+            android:tag="5"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_06"
+            android:tag="6"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_07"
+            android:tag="7"
+            />
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_weight="2"
+        android:weightSum="7"
+        android:gravity="center">
+
+
+
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_08"
+            android:tag="8"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_09"
+            android:tag="9"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_10"
+            android:tag="10"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_11"
+            android:tag="11"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_12"
+            android:tag="12"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_13"
+            android:tag="13"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_14"
+            android:tag="14"
+            />
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_weight="2"
+        android:weightSum="7"
+        android:gravity="center">
+
+
+
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_15"
+            android:tag="15"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_16"
+            android:tag="16"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_17"
+            android:tag="17"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_18"
+            android:tag="18"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_19"
+            android:tag="19"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_20"
+            android:tag="20"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_21"
+            android:tag="21"
+            />
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_weight="2"
+        android:weightSum="7"
+        android:gravity="center">
+
+
+
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_22"
+            android:tag="22"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_23"
+            android:tag="23"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_24"
+            android:tag="24"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_25"
+            android:tag="25"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_26"
+            android:tag="26"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_27"
+            android:tag="27"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_28"
+            android:tag="28"
+            />
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_weight="2"
+        android:weightSum="7"
+        android:gravity="center">
+
+
+
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_29"
+            android:tag="29"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_30"
+            android:tag="30"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_31"
+            android:tag="31"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_32"
+            android:tag="32"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_33"
+            android:tag="33"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_34"
+            android:tag="34"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_35"
+            android:tag="35"
+            />
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_weight="2"
+        android:weightSum="7"
+        android:gravity="center">
+
+
+
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_36"
+            android:tag="36"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_37"
+            android:tag="37"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_38"
+            android:tag="38"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_39"
+            android:tag="39"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_40"
+            android:tag="40"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_41"
+            android:tag="41"
+            />
+        <include layout="@layout/calendarcell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/calendarcell_42"
+            android:tag="42"
+
+            />
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/dashboardMainFragment"
+    android:background="@color/background"
+    android:layout_weight="1"
+    android:weightSum="4">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="4"
+        android:background="@drawable/border">
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:gravity="center">
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:background="@drawable/button"
+                android:text="NQQS"
+                android:textColor="@color/background"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/btnNQQS" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:gravity="center">
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:background="@drawable/button"
+                android:text="NKS"
+                android:textColor="@color/background"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/btnNKS" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:gravity="center">
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:background="@drawable/button"
+                android:text="NQQ"
+                android:textColor="@color/background"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/btnNQQ" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:gravity="center">
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:background="@drawable/button"
+                android:text="NK"
+                android:textColor="@color/background"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/btnNK" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="3"
+        android:background="@drawable/border">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Statistics"
+                android:id="@+id/statsTitle"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="ADR: "
+                android:id="@+id/ADR"
+                android:layout_below="@+id/statsTitle"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/text"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="tvADR"
+                android:id="@+id/tvADR"
+                android:layout_alignTop="@+id/ADR"
+                android:layout_toEndOf="@+id/ADR"
+              />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Check Ins: "
+                android:id="@+id/checkIns"
+                android:layout_below="@+id/ADR"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Check Outs: "
+                android:id="@+id/checkOuts"
+                android:layout_below="@+id/tvCheckins"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Stay Overs: "
+                android:id="@+id/stayOvers"
+                android:layout_below="@+id/checkOuts"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="tvCheckIns"
+                android:id="@+id/tvCheckins"
+                android:layout_alignTop="@+id/checkIns"
+                android:layout_toEndOf="@+id/checkIns" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="tvCheckOuts"
+                android:id="@+id/tvCheckouts"
+                android:layout_alignTop="@+id/checkOuts"
+                android:layout_toEndOf="@+id/checkOuts" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="tvStayOver"
+                android:id="@+id/tvStayOvers"
+                android:layout_alignTop="@+id/stayOvers"
+                android:layout_toEndOf="@+id/stayOvers"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="HK Statistics"
+                android:id="@+id/hkStatistics"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Clean: "
+                android:id="@+id/clean"
+                android:layout_below="@+id/hkStatistics"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="tvClean"
+                android:id="@+id/tvClean"
+                android:layout_alignTop="@+id/clean"
+                android:layout_toEndOf="@+id/clean" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Dirty: "
+                android:id="@+id/dirty"
+                android:layout_below="@+id/clean"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="tvDirty"
+                android:id="@+id/tvDirty"
+                android:layout_alignTop="@+id/dirty"
+                android:layout_toEndOf="@+id/dirty"
+               />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="RFI: "
+                android:id="@+id/rfi"
+                android:layout_below="@+id/dirty"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="tvRFI"
+                android:id="@+id/tvRFI"
+                android:layout_alignTop="@+id/rfi"
+                android:layout_toEndOf="@+id/rfi"
+              />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Reclean: "
+                android:id="@+id/Reclean"
+                android:layout_below="@+id/rfi"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="tvReclean"
+                android:id="@+id/tvReclean"
+                android:layout_alignTop="@+id/Reclean"
+                android:layout_toEndOf="@+id/Reclean" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Maintenance"
+                android:id="@+id/Maintenance"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/text"
+                android:textAlignment="center"
+                android:gravity="center" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Open Tickets"
+                android:id="@+id/btnOpenTickets"
+                android:background="@drawable/button"
+                android:textColor="@color/background"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create A Ticket"
+                android:id="@+id/btnCreateATicket"
+                android:textColor="@color/background"
+                android:background="@drawable/button"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/border">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Guest Search"
+            android:id="@+id/searchTitle"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:singleLine="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etFName"
+            android:hint="First Name"
+            android:textColor="@color/text"
+            android:layout_below="@+id/searchTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:enabled="false" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etLName"
+            android:layout_below="@+id/etFName"
+            android:layout_alignStart="@+id/etFName"
+            android:hint="Last Name"
+            android:textColor="@color/text"
+            android:enabled="false"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="5"
+        android:background="@drawable/border">
+
+        <include layout="@layout/weathercell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/weathercell_01"
+            android:tag="0"
+            />
+        <include layout="@layout/weathercell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/weathercell_02"
+            android:tag="1"
+            />
+        <include layout="@layout/weathercell"
+
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/weathercell_03"
+            android:tag="2"
+            />
+        <include layout="@layout/weathercell"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/weathercell_04"
+            android:tag="3"
+            />
+        <include layout="@layout/weathercell"
+            android:background="@drawable/border"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:id="@+id/weathercell_05"
+            android:tag="4"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>
