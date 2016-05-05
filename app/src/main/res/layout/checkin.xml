@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Check In Date"
+        android:id="@+id/tvCheckin"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_toEndOf="@+id/dpCheckIn"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_alignEnd="@id/dpCheckIn" />
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dpCheckIn"
+        android:calendarViewShown="false"
+        android:endYear="2525"
+        android:layout_marginLeft="8dp"
+        android:layout_below="@+id/tvCheckin"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"
+        android:headerBackground="@color/button"
+        android:spinnersShown="true"
+        android:datePickerMode="spinner"
+        android:yearListSelectorColor="@color/button" />
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dpCheckOut"
+        android:layout_toEndOf="@+id/dpCheckIn"
+        android:calendarViewShown="false"
+        android:calendarTextColor="@color/text"
+        android:headerBackground="@color/button"
+        android:spinnersShown="true"
+        android:datePickerMode="spinner"
+        android:layout_marginLeft="50dp"
+        android:layout_below="@+id/tvCheckOut"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Check Out Date"
+        android:id="@+id/tvCheckOut"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_alignEnd="@+id/dpCheckOut"
+        android:textColor="@color/text"
+        android:textAlignment="center"
+        android:layout_alignStart="@+id/dpCheckOut" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Rate"
+        android:id="@+id/tvRate"
+        android:layout_below="@+id/dpCheckIn"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/text" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spnRate"
+        android:layout_below="@+id/tvRate"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_alignEnd="@id/dpCheckIn"
+        android:spinnerMode="dialog" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Market"
+        android:id="@+id/tvMarket"
+        android:layout_below="@+id/dpCheckOut"
+        android:layout_alignStart="@+id/dpCheckOut"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/text" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spnMarket"
+        android:layout_alignStart="@+id/tvMarket"
+        android:layout_alignEnd="@id/dpCheckOut"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/tvMarket"
+        android:spinnerMode="dialog" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Room Type"
+        android:id="@+id/tvRoomType"
+        android:layout_below="@+id/spnRate"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/text" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spnRoomType"
+        android:layout_below="@+id/tvRoomType"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_alignEnd="@id/dpCheckIn"
+        android:spinnerMode="dialog" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Room Number"
+        android:id="@+id/tvRoomNumber"
+        android:layout_below="@+id/spnMarket"
+        android:layout_alignStart="@+id/spnMarket"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/text" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spnRoomNumber"
+        android:layout_alignStart="@+id/tvRoomNumber"
+        android:layout_alignEnd="@id/dpCheckOut"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/tvRoomNumber"
+        android:spinnerMode="dialog" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="State"
+        android:id="@+id/rbtnState"
+        android:allowUndo="true"
+        android:checked="true"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:buttonTint="@color/button"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Tax Profile"
+        android:id="@+id/textView"
+        android:layout_below="@+id/spnRoomType"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/text" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Occupancy"
+        android:id="@+id/rbtnOccupancy"
+        android:layout_below="@+id/rbtnState"
+        android:layout_alignParentStart="true"
+        android:checked="true"
+        android:buttonTint="@color/button"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:enabled="true"
+        android:textColor="@color/text" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="County"
+        android:id="@+id/radioButton3"
+        android:layout_below="@+id/rbtnOccupancy"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/text"
+        android:checked="true"
+        android:buttonTint="@color/button"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:id="@+id/btnContinue"
+        android:background="@color/button"
+        android:textColor="@color/white"
+        android:layout_alignBottom="@+id/radioButton3"
+        android:layout_toEndOf="@+id/tvRoomNumber" />
+</RelativeLayout>

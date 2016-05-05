@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Background
     void login(LinkedMultiValueMap formData){
+        app.showProgressDialog(context, "Logging in", "Please Wait...");
         try {
             login = restClient.authenticateLogin(formData);
         }catch (RestClientException e) {
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         if (login != null) {
             Gson gson = new Gson();
             Log.d("responses ", "Login json response " + gson.toJson(login));
-
+            app.setUserInfo(login);
             app.setToken(login.getToken());
 
             goToDashboard();
@@ -102,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
 
     @UiThread(propagation = UiThread.Propagation.REUSE)
     void goToDashboard(){
+
+
         Dashboard_.intent(context).start();
 
     }

@@ -22,6 +22,12 @@ import org.springframework.util.LinkedMultiValueMap;
 
 import java.io.IOException;
 
+import technobytes.com.eloquence.rest.models.Company;
+import technobytes.com.eloquence.rest.models.Guest;
+import technobytes.com.eloquence.rest.models.Market;
+import technobytes.com.eloquence.rest.models.Rate;
+import technobytes.com.eloquence.rest.models.RoomCollection;
+import technobytes.com.eloquence.rest.models.RoomType;
 import technobytes.com.eloquence.rest.responses.AuthenticateLogin;
 import technobytes.com.eloquence.rest.responses.LoadCalendarAvailability;
 import technobytes.com.eloquence.rest.responses.LoadInitialData;
@@ -50,7 +56,34 @@ public interface Data extends RestClientHeaders, RestClientErrorHandling, RestCl
       @RequiresHeader("x-access-token")
       LoadInitialData loadInitialData();
 
+
+
+      @Get("/company")
+      @RequiresHeader("x-access-token")
+      Company[] getAllCompanies();
+
+      @Get("/rate")
+      @RequiresHeader("x-access-token")
+      Rate[] getAllRates();
+
+      @Get("/market")
+      @RequiresHeader("x-access-token")
+      Market[] getAllMarkets();
+
+      @Get("/roomType")
+      @RequiresHeader("x-access-token")
+      RoomType[] getAllRoomTypes();
+
+      @Get("/roomNumber")
+      @RequiresHeader("x-access-token")
+      RoomCollection[] getAllRooms();
+
+      @Post("/guest")
+      @RequiresHeader("x-access-token")
+      Guest postNewGuest(@Body LinkedMultiValueMap<String, String> formData);
+
 }
+
 
 class HTTPLoggingInterceptor implements ClientHttpRequestInterceptor {
     public static final String TAG = "CALL_RESTCLIENT";

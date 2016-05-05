@@ -8,6 +8,22 @@ public class Stay {
     String checkInDate, checkOutDate;
     String   status, roomType;
 
+    public Stay(int stayId, int rateId, int marketId, int folioId, int guestId, int empId, int locationId, int roomNumber, int taxProfile, String checkInDate, String checkOutDate, String status, String roomType) {
+        this.stayId = stayId;
+        this.rateId = rateId;
+        this.marketId = marketId;
+        this.folioId = folioId;
+        this.guestId = guestId;
+        this.empId = empId;
+        this.locationId = locationId;
+        this.roomNumber = roomNumber;
+        this.taxProfile = taxProfile;
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
+        this.status = status;
+        this.roomType = roomType;
+    }
+
     public int getStayId() {
         return stayId;
     }

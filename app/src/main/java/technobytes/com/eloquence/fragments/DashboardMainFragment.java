@@ -1,6 +1,7 @@
 package technobytes.com.eloquence.fragments;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -11,11 +12,17 @@ import org.androidannotations.annotations.AfterInject;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.App;
 import org.androidannotations.annotations.Background;
+import org.androidannotations.annotations.Bean;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 import org.androidannotations.rest.spring.annotations.RestService;
 import org.springframework.web.client.RestClientException;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 import technobytes.com.eloquence.R;
 import technobytes.com.eloquence.rest.Data;
@@ -25,6 +32,8 @@ import technobytes.com.eloquence.rest.responses.LoadInitialData;
 import technobytes.com.eloquence.rest.weather.Weather;
 import technobytes.com.eloquence.rest.weather.models.getCurrentWeather;
 import technobytes.com.eloquence.utils.Globals;
+import technobytes.com.eloquence.utils.eventbus.ClickedCheckIn;
+import technobytes.com.eloquence.utils.eventbus.EventsBus;
 
 /**
  * Created by seisan on 4/18/16.
@@ -32,11 +41,18 @@ import technobytes.com.eloquence.utils.Globals;
 @EFragment(R.layout.dashboard_main)
 public class DashboardMainFragment extends Fragment{
 
+
+    Context context;
+
+    GregorianCalendar calendar;
+
     getCurrentWeather weather;
     LoadInitialData loadInitialData;
 
     int clean, dirty, rfi, reclean, checkIns, checkOuts, NQQS, NKS, NQQ, NK;
 
+    @Bean
+    EventsBus bus;
 
     @App
     Globals app;
@@ -57,6 +73,14 @@ public class DashboardMainFragment extends Fragment{
     @AfterInject
     void AfterInject(){
 
+
+        context = getActivity();
+
+
+        calendar = new GregorianCalendar();
+        Date date = new Date();
+        calendar.setTime(date);
+
     }
     @AfterViews
     void AfterViews(){
@@ -70,8 +94,11 @@ public class DashboardMainFragment extends Fragment{
         loadInitialData();
     }
 
+
+
     @Background
     void loadInitialData(){
+
         restService.setHeader("x-access-token", app.getToken());
         try{
             loadInitialData = restService.loadInitialData();
@@ -88,6 +115,17 @@ public class DashboardMainFragment extends Fragment{
 
     }
 
+    @Click({R.id.btnNK, R.id.btnNKS, R.id.btnNQQ, R.id.btnNQQS})
+    void clickedWalkIn(Button btn){
+        String tag = String.valueOf(btn.getText());
+
+        bus.post(new ClickedCheckIn(String.valueOf(calendar.get(Calendar.DATE)),
+                String.valueOf(calendar.get(Calendar.MONTH)), String.valueOf(calendar.get(Calendar.YEAR)), tag));
+
+
+    }
+
+
     @Background
     void weather(){
         try{
@@ -97,7 +135,7 @@ public class DashboardMainFragment extends Fragment{
             Log.d("DashboardMain Error", e.getMessage());
 
         }
-        if (weather != null && loadInitialData != null){
+        if (weather != null){
             Log.d("weather not null", weather.toString());
 
             setViews();
@@ -106,6 +144,7 @@ public class DashboardMainFragment extends Fragment{
 
     @UiThread(propagation = UiThread.Propagation.REUSE)
     void setViews(){
+
         for(Room room : loadInitialData.getRooms()){
 
 
@@ -187,6 +226,8 @@ public class DashboardMainFragment extends Fragment{
             condition.setText(weather.getForecast().getSimpleforecast().getForecastday()[i].getConditions());
 
         }
+
+        app.closeProgressDialog();
 
     }
 

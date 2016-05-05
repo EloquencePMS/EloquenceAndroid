@@ -3,7 +3,6 @@ package technobytes.com.eloquence.fragments;
 import android.app.Fragment;
 import android.util.Log;
 import android.widget.ImageButton;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.androidannotations.annotations.AfterInject;
@@ -27,6 +26,7 @@ import technobytes.com.eloquence.R;
 import technobytes.com.eloquence.rest.Data;
 import technobytes.com.eloquence.rest.responses.LoadCalendarAvailability;
 import technobytes.com.eloquence.utils.Globals;
+import technobytes.com.eloquence.viewgroups.calendarcell;
 
 /**
  * Created by seisan on 4/18/16.
@@ -39,7 +39,7 @@ public class CalendarFragment extends Fragment{
 
     GregorianCalendar calendar;
     String month, year;
-    List<RelativeLayout> listOfCells;
+    List<calendarcell> listOfCells;
     @App
     Globals app;
 
@@ -50,7 +50,7 @@ public class CalendarFragment extends Fragment{
     ImageButton btnLeftArrow, btnRightArrow;
 
     @ViewById
-    RelativeLayout calendarcell_01, calendarcell_02, calendarcell_03, calendarcell_04, calendarcell_05, calendarcell_06, calendarcell_07,
+    calendarcell calendarcell_01, calendarcell_02, calendarcell_03, calendarcell_04, calendarcell_05, calendarcell_06, calendarcell_07,
             calendarcell_08, calendarcell_09, calendarcell_10, calendarcell_11, calendarcell_12, calendarcell_13, calendarcell_14,
             calendarcell_15, calendarcell_16, calendarcell_17, calendarcell_18, calendarcell_19, calendarcell_20, calendarcell_21,
             calendarcell_22, calendarcell_23, calendarcell_24, calendarcell_25, calendarcell_26, calendarcell_27, calendarcell_28,
@@ -75,7 +75,7 @@ public class CalendarFragment extends Fragment{
 
     @AfterViews
     void AfterViews(){
-        listOfCells = new ArrayList<RelativeLayout>();
+        listOfCells = new ArrayList<>();
         listOfCells.add(calendarcell_01); listOfCells.add(calendarcell_02); listOfCells.add(calendarcell_03); listOfCells.add(calendarcell_04);
         listOfCells.add(calendarcell_05); listOfCells.add(calendarcell_06); listOfCells.add(calendarcell_07); listOfCells.add(calendarcell_08);
         listOfCells.add(calendarcell_09); listOfCells.add(calendarcell_10); listOfCells.add(calendarcell_11); listOfCells.add(calendarcell_12);
@@ -108,12 +108,16 @@ public class CalendarFragment extends Fragment{
 
         Date newDate = day.getTime();
 
-        for(RelativeLayout cell: listOfCells){
-            TextView tvDate = (TextView)cell.findViewById(R.id.tvDate);
-            TextView tvAvailability = (TextView)cell.findViewById(R.id.tvAvailability);
-            tvDate.setText(String.valueOf(day.get(Calendar.DATE)));
+        for(calendarcell cell: listOfCells){
+//            TextView tvDate = (TextView)cell.findViewById(R.id.tvDate);
+//            TextView tvAvailability = (TextView)cell.findViewById(R.id.tvAvailability);
+//            tvDate.setText(String.valueOf(day.get(Calendar.DATE)));
+
+
+
             Log.d("checking dates", String.valueOf(day.get(Calendar.DATE)));
-            getAvailability(String.valueOf(day.get(Calendar.YEAR)), getMonth(day.get(Calendar.MONTH)), String.valueOf(day.get(Calendar.DATE)), tvAvailability);
+            cell.getAvailability(String.valueOf(day.get(Calendar.YEAR)), getMonth(day.get(Calendar.MONTH)), String.valueOf(day.get(Calendar.DATE))
+            );
             day.add(Calendar.DATE, 1);
 
 

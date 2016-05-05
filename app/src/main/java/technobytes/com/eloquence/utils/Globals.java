@@ -10,6 +10,7 @@ import org.androidannotations.annotations.EApplication;
 import org.androidannotations.annotations.UiThread;
 
 import technobytes.com.eloquence.rest.models.Stay;
+import technobytes.com.eloquence.rest.responses.AuthenticateLogin;
 
 /**
  * Created by seisan on 4/7/16.
@@ -21,6 +22,27 @@ public class Globals extends Application{
     private AlertDialog alertDialog;
     ProgressDialog progressDialog;
     Stay[] checkins,checkouts, stayover;
+
+    AuthenticateLogin userInfo;
+
+    Stay newStay;
+
+
+    public AuthenticateLogin getUserInfo() {
+        return userInfo;
+    }
+
+    public void setUserInfo(AuthenticateLogin userInfo) {
+        this.userInfo = userInfo;
+    }
+
+    public Stay getNewStay() {
+        return newStay;
+    }
+
+    public void setNewStay(Stay newStay) {
+        this.newStay = newStay;
+    }
 
     public Stay[] getCheckins() {
         return checkins;

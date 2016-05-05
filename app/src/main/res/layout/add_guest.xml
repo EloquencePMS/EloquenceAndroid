@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_weight="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="First Name"
+        android:id="@+id/tvFirstName"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/text" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/etFirstName"
+        android:layout_below="@+id/tvFirstName"
+        android:layout_alignStart="@+id/tvFirstName"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Last Name"
+        android:id="@+id/tvLastName"
+        android:layout_toEndOf="@+id/etFirstName"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/text" />
+
+    <EditText
+        android:textColor="@color/text"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:ems="10"
+        android:id="@+id/etLastName"
+        android:layout_alignTop="@+id/etFirstName"
+        android:layout_toEndOf="@+id/etFirstName"
+        android:layout_marginLeft="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Street"
+        android:id="@+id/tvStreet"
+        android:layout_below="@+id/etFirstName"
+        android:layout_alignStart="@+id/etFirstName"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/text"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/etStreet"
+        android:layout_below="@+id/tvStreet"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/text"
+        android:layout_alignEnd="@id/etLastName" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="City"
+        android:id="@+id/tvCity"
+        android:layout_below="@+id/etStreet"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/text" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/etCity"
+        android:layout_below="@+id/tvCity"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/text"
+
+        android:layout_marginTop="8dp" />
+
+    <EditText
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/etState"
+        android:layout_alignTop="@+id/etCity"
+        android:textColor="@color/text"
+
+        android:layout_toEndOf="@+id/etCity"
+        android:layout_marginLeft="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="State"
+        android:id="@+id/tvState"
+        android:layout_toEndOf="@+id/etCity"
+        android:layout_marginLeft="8dp"
+        android:layout_below="@+id/etStreet"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Zip"
+        android:id="@+id/tvZip"
+        android:layout_below="@+id/etStreet"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/text"
+        android:layout_toEndOf="@id/etState" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/etZip"
+        android:layout_toEndOf="@+id/etState"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/text"
+
+        android:layout_below="@+id/tvZip"
+        android:layout_alignEnd="@id/etStreet" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Phone Number"
+        android:id="@+id/tvPhone"
+        android:layout_below="@+id/etCity"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/text" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/etPhone"
+        android:layout_below="@+id/tvPhone"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Email"
+        android:id="@+id/tvEmail"
+        android:layout_below="@+id/etPhone"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/text"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/etEmail"
+        android:layout_below="@+id/tvEmail"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/text"
+
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Company"
+        android:id="@+id/tvCompany"
+        android:layout_below="@+id/etEmail"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/text" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spnCompany"
+        android:layout_below="@+id/tvCompany"
+        android:textColor="@color/text"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@id/etLastName" />
+
+</RelativeLayout>
+</LinearLayout>
